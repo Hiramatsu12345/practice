@@ -10,7 +10,7 @@ import com.internousdev.newecsite.util.DBConnector;
 public class LoginDAO {
 
 	private DBConnector dbConnector=new DBConnector();
-	private Connection connection=dbConnector.getConnection();
+	private Connection con=dbConnector.getConnection();
 	private LoginDTO loginDTO=new LoginDTO();
 	public LoginDTO getLoginUserInfo(String loginUserId, String loginPassword){
 
