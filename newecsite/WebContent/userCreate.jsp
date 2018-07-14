@@ -10,7 +10,7 @@
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
-	<title>Home画面</title>
+	<title>UserCreate画面</title>
 
 <style type="text/css">
 body{
@@ -57,24 +57,56 @@ table{
 </head>
 <body>
 
-<div id="header">
-	<div id="pr">
-</div>
+	<div id="header">
+		<div id="pr">
+		</div>
+	</div>
 
-</div>
 	<div id="main">
 		<div id="top">
-			<p>Home</p>
+			<p>UserCreate</p>
 		</div>
-			<div id="text-center">
-				<s:form action="HomeAction">
-					<s:submit value="商品購入"/>
+		<div>
+			<s:if test="errorMassage != ''">
+				<s:property value="errorMassage" escape="false" />
+			</s:if>
+			<table>
+				<s:form action="UserCreateConfirmAction">
+					<tr>
+						<td>
+							<label>ログインID:</label>
+						</td>
+						<td>
+							<input type="text" name="loginUserId" value="" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>ログインPASS:</label>
+						</td>
+						<td>
+							<input type="text" name="loginPassword" value="" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>ユーザー名:</label>
+						</td>
+						<td>
+							<input type="text" name="userName" value="" />
+						</td>
+					</tr>
+					<s:submit value="登録"/>
 				</s:form>
-					<s:if test="#session.id!=null">
-						<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
-					</s:if>
+			</table>
+
+			<div>
+				<span>前画面に戻る場合は</span>
+				<a href='<s:url action="HomeAction" />'>こちら</a>
 			</div>
+		</div>
 	</div>
+
 	<div id="footer">
 		<div id="pr">
 		</div>
