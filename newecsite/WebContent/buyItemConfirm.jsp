@@ -48,10 +48,6 @@ table{
 	background-color:black;
 	clear:both;
 }
-#text-link{
-	display:inline-block;
-	text-align: right;
-}
 </style>
 
 <script type="text/javascript">

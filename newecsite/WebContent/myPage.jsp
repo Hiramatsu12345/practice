@@ -10,7 +10,7 @@
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
-	<title>BuyItemComplete画面</title>
+	<title>MyPage画面</title>
 
 <style type="text/css">
 body{
@@ -48,6 +48,10 @@ table{
 	background-color:black;
 	clear:both;
 }
+#text-right{
+	display:inline-block;
+	text-align:right;
+}
 </style>
 
 </head>
@@ -60,13 +64,43 @@ table{
 
 	<div id="main">
 		<div id="top">
-			<p>BuyItemComplete</p>
+			<p>MyPage</p>
 		</div>
 		<div>
-			<p>購入手続きが完了致しました。</p>
-			<div>
-				<a href='<s:url action="MyPageAction" />'>マイページ</a><span>から購入履歴の確認が可能です。</span>
+			<s:if test="myPageList==null">
+				<h3>ご購入情報はありません。</h3>
+			</s:if>
+			<s:elseif test="message==null">
+				<h3>ご購入情報は以下になります。</h3>
+					<table border="1">
+						<tr>
+							<th>商品名</th>
+							<th>値段</th>
+							<th>購入個数</th>
+							<th>支払い方法</th>
+							<th>購入日</th>
+						</tr>
+						<s:iterator value="myPageList">
+							<tr>
+								<td><s:property value="itemName" /></td>
+								<td><s:property value="totalPrice" /><span>円</span></td>
+								<td><s:property value="totalCount" /><span>個</span></td>
+								<td><s:property value="payment" /></td>
+								<td><s:property value="insert_date" /></td>
+							</tr>
+						</s:iterator>
+					</table>
+					<s:form action="MyPageAction">
+						<input type="hidden" name="deleteFlg" value="1">
+						<s:submit value="削除" method="delete" />
+					</s:form>
+			</s:elseif>
+			<s:if test="message!=null">
+				<h3><s:property value="message"/></h3>
+			</s:if>
+			<div id="text-right">
 				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
+				<p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>
 			</div>
 		</div>
 	</div>
