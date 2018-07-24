@@ -4,11 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Home画面</title>
-
-<link rel="stylesheet" href=/newecsite.css">
-
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./css/newecsite.css"/>
+<title>Home画面</title>
 </head>
 <body>
 

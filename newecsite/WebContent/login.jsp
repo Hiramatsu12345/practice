@@ -4,16 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta http-equiv="Content-Style-Type" content="text/css" />
-	<meta http-equiv="Content-Script-Type" content="text/javascript" />
-	<meta http-equiv="imagetoolbar" content="no" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<title>Login画面</title>
-
-
-
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./css/newecsite.css"/>
+<title>Login画面</title>
 </head>
 <body>
 
