@@ -9,7 +9,7 @@ public class DBConnector {
 	private static String driverName="com.mysql.jdbc.Driver";
 	private static String url="jdbc:mysql://localhost:3306?characterEncoding=UTF-8&serverTimezone=JST";
 	private static String user="root";
-	private static String password="ryoya7228";
+	private static String password="root";
 
 	public Connection getConnection(){
 		Connection con=null;
